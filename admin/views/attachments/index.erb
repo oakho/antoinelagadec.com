@@ -1,0 +1,38 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to pat(:list), url(:attachments, :index) %></li>
+      <li><%= link_to pat(:new), url(:attachments, :new) %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2 class="title"><%= pat(:all) %> <% mt(:attachments) %></h2>
+    <div class="inner">
+      <table class="table">
+        <tr>
+          <th class="first"><%= mat(:attachment, :id) %></th>
+          <th><%= mat(:attachment, :file_uid) %></th>
+          <th><%= mat(:attachment, :created_at) %></th>
+          <th><%= mat(:attachment, :updated_at) %></th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @attachments.each do |attachment| %>
+        <tr>
+          <td class="first"><%= attachment.id %></td>
+          <td><%= attachment.file_uid %></td>
+          <td><%= attachment.created_at %></td>
+          <td><%= attachment.updated_at %></td>
+          <td class="last">
+            <%= button_to pat(:edit), url(:attachments, :edit, :id => attachment.id), :method => :get, :class => :button_to %> |
+            <%= button_to pat(:delete), url(:attachments, :destroy, :id => attachment.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<% content_for :sidebar, partial("base/sidebar") %>

@@ -1,0 +1,234 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "susy";
+
+// Mixins
+// ----------------------------------------------------------------------
+@mixin mask($path, $position: left top, $repeat: repeat) {
+  -webkit-mask: url($path) $position $repeat;
+  -moz-mask   : url($path) $position $repeat;
+  -o-mask     : url($path) $position $repeat;
+  mask        : url($path) $position $repeat;
+}
+
+// Susy Grid
+// ----------------------------------------------------------------------
+$total-columns : 16;              // a 12-column grid
+$column-width  : 40px;            // each column is 4em wide
+$gutter-width  : 20px;            // 1em gutters between columns
+$grid-padding  : 10px;            // grid-padding equal to gutters
+
+// Defaults
+// ----------------------------------------------------------------------
+html, body { height: 100%; }
+
+body {
+  font-family: "Trade Gothic W01 Roman", "Helvetica", "Tahoma", "Arial", sans-serif;
+  font-size: .9em;
+  color: #3f3c39;
+  overflow-y: scroll;
+}
+
+p {
+  margin-bottom: 1.4em;
+  line-height: 1.2em;
+}
+
+a {
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+  &:hover, &:active, &:visited { color: #3f3c39; }
+}
+
+strong { font-family: "Trade Gothic W01 Bold 2"; }
+
+// Commons
+// ----------------------------------------------------------------------
+.wrapper {
+  height: auto;
+  min-height: 100%;
+}
+
+.row { @include container; }
+
+// Headings
+// ----------------------------------------------------------------------
+.heading1 {
+  font-size: 2.4em;
+  font-family: "Trade Gothic W01 Bold 2";
+}
+
+// Buttons
+// ----------------------------------------------------------------------
+.btn {
+  display: inline-block;
+
+  .icon { display: inline-block; background: #000; }
+
+  .icon-github   { @include mask('../img/glyphicons_github.png'); }
+  .icon-spotify  { @include mask('../img/glyphicons_spootify.png'); }
+  .icon-pinboard { @include mask('../img/glyphicons_pinboard.png'); }
+  .icon-facebook { @include mask('../img/glyphicons_facebook.png'); }
+  .icon-twitter  { @include mask('../img/glyphicons_twitter.png'); }
+  .icon-flickr   { @include mask('../img/glyphicons_flickr.png'); }
+  .icon-projects { @include mask('../img/icon-projects.png', center center, no-repeat); }
+  .icon-photo    { @include mask('../img/icon-photo.png', center center, no-repeat); }
+  .icon-music    { @include mask('../img/icon-music.png', center center, no-repeat); }
+  .icon-about    { @include mask('../img/icon-about.png', center center, no-repeat); }
+}
+
+// Header
+// ----------------------------------------------------------------------
+.header {
+  background: url('../img/background-darkbrown.png');
+  padding: 50px 0 10px;
+
+  a {
+    @include transition-property(color, background, transform);
+    @include transition-duration(200ms);
+    @include transition-timing-function(ease-out);
+    display: inline-block;
+    color: #2defd0;
+
+    &:hover, &.active {
+      @include translate(0, 2px);
+      color: #fe735b;
+      text-decoration: none;
+    }
+  }
+
+  .header-logo {
+    @include span-columns(4, 16);
+    font-family: "Trade Gothic W01 Light";
+    font-size: 2.2em;
+  }
+
+  .header-nav {
+    @include span-columns(12 omega, 16);
+    text-align: right;
+
+    .icon {
+      padding: 0 1px;
+      margin: 0 0 0 1px;
+      height: 34px;
+      width: 34px;
+      background: #2defd0;
+    }
+
+    a:hover, a.active {
+      .icon { background: #fe735b; }
+    }
+
+    .icon-music { width: 22px; }
+  }
+}
+
+// Page Title
+// ----------------------------------------------------------------------
+.page-title {
+  background: url('../img/background-page-title.png') repeat-x;
+  .heading1 {
+    text-align: center;
+    line-height: .8em;
+    padding: 32px 0 0;
+  }
+}
+
+// Yield
+// ----------------------------------------------------------------------
+.yield {
+  font-size: 1.03em;
+  padding: 0 0 46px;
+
+  img { @include single-box-shadow(#bbb, 0px, 0px, 20px) }
+
+  .row {
+    &:first-child { margin-top: 30px; }
+    &:last-child { margin-bottom: 30px; }
+  }
+}
+
+// Projects
+// ----------------------------------------------------------------------
+.projects {
+  .a-project-cover {
+    display: block;
+    position: relative;
+    cursor: pointer;
+
+    .a-project-cover-normal {
+      @include single-transition(all, 200ms, ease-in);
+      position: relative;
+      z-index: 1;
+    }
+
+    .a-project-cover-blurred {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &:hover {
+      .a-project-cover-normal {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+// About Page
+// ----------------------------------------------------------------------
+.about {
+  .about-picture { @include span-columns(6, 16); }
+  .about-content { @include span-columns(10 omega, 16); }
+}
+
+// Footer
+// ----------------------------------------------------------------------
+.footer {
+  position: relative;
+  height: 24px;
+  margin: -46px auto 0;
+  border-top: 1px solid #d2d3d4;
+  color: #55534f;
+
+  a { font-family: "Trade Gothic W01 Bold 2"; }
+
+  .footer-inner {
+    padding: 10px 0;
+    height: 100%;
+    border-top: 1px solid #fff;
+  }
+
+  .footer-infos {
+    @include span-columns(6, 16);
+    line-height: 1.6em;
+  }
+
+  .footer-social {
+    @include span-columns(10 omega, 16);
+    text-align: right;
+
+    .btn {
+      @include transition-property(color, background, transform);
+      @include transition-duration(200ms);
+      @include transition-timing-function(ease-out);
+      @include opacity(.8);
+
+      &:hover {
+        @include opacity(1);
+        @include translate(0, 2px);
+      }
+    }
+
+    .icon {
+      height: 24px;
+      width: 24px;
+      background: #2b2824;
+    }
+  }
+}
+
+// Hacks
+// ----------------------------------------------------------------------
+#mti_wfs_colophon { display: none !important; }

@@ -1,0 +1,45 @@
+<div class="group">
+  <%= f.label :name %><%= f.error_message_on :name %>
+  <%= f.text_field :name, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :slug %><%= f.error_message_on :slug %>
+  <%= f.text_field :slug, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :body %><%= f.error_message_on :body %>
+  <%= f.text_area :body, :class => :text_area %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :url %><%= f.error_message_on :url %>
+  <%= f.text_field :url, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <label for="cover">Cover:</label>
+  <input class="file_field" type="file" name="cover">
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <label for="tags">Tags:</label>
+  <input class="text_field" type="text" name="tags" value="<%= get_joined_tags(@project) %>">
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <h3>Categories</h3>
+  <% @categories.each do |category| %>
+    <label style="display: block">
+      <input type="checkbox" name="categories[]" value="<%= category.id %>" class="check_box"
+      <%= "checked" if category_checked?(category, @project) %>>
+      <%= category.name %>
+    </label>
+  <% end %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group navform wat-cf">
+  <%= f.submit pat(:save), :class => :button %>
+  <%= f.submit pat(:cancel), :onclick => "window.location='#{url(:projects, :index)}';return false", :class => :button %>
+</div>

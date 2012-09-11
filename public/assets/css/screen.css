@@ -1,0 +1,363 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Trade Gothic W01 Roman", "Helvetica", "Tahoma", "Arial", sans-serif;
+  font-size: .9em;
+  color: #3f3c39;
+  overflow-y: scroll;
+}
+
+p {
+  margin-bottom: 1.4em;
+  line-height: 1.2em;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:hover, a:active, a:visited {
+  color: #3f3c39;
+}
+
+strong {
+  font-family: "Trade Gothic W01 Bold 2";
+}
+
+.wrapper {
+  height: auto;
+  min-height: 100%;
+}
+
+.row {
+  *zoom: 1;
+  max-width: 940px;
+  _width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.heading1 {
+  font-size: 2.4em;
+  font-family: "Trade Gothic W01 Bold 2";
+}
+
+.btn {
+  display: inline-block;
+}
+.btn .icon {
+  display: inline-block;
+  background: #000;
+}
+.btn .icon-github {
+  -webkit-mask: url("../img/glyphicons_github.png") left top repeat;
+  -moz-mask: url("../img/glyphicons_github.png") left top repeat;
+  -o-mask: url("../img/glyphicons_github.png") left top repeat;
+  mask: url("../img/glyphicons_github.png") left top repeat;
+}
+.btn .icon-spotify {
+  -webkit-mask: url("../img/glyphicons_spootify.png") left top repeat;
+  -moz-mask: url("../img/glyphicons_spootify.png") left top repeat;
+  -o-mask: url("../img/glyphicons_spootify.png") left top repeat;
+  mask: url("../img/glyphicons_spootify.png") left top repeat;
+}
+.btn .icon-pinboard {
+  -webkit-mask: url("../img/glyphicons_pinboard.png") left top repeat;
+  -moz-mask: url("../img/glyphicons_pinboard.png") left top repeat;
+  -o-mask: url("../img/glyphicons_pinboard.png") left top repeat;
+  mask: url("../img/glyphicons_pinboard.png") left top repeat;
+}
+.btn .icon-facebook {
+  -webkit-mask: url("../img/glyphicons_facebook.png") left top repeat;
+  -moz-mask: url("../img/glyphicons_facebook.png") left top repeat;
+  -o-mask: url("../img/glyphicons_facebook.png") left top repeat;
+  mask: url("../img/glyphicons_facebook.png") left top repeat;
+}
+.btn .icon-twitter {
+  -webkit-mask: url("../img/glyphicons_twitter.png") left top repeat;
+  -moz-mask: url("../img/glyphicons_twitter.png") left top repeat;
+  -o-mask: url("../img/glyphicons_twitter.png") left top repeat;
+  mask: url("../img/glyphicons_twitter.png") left top repeat;
+}
+.btn .icon-flickr {
+  -webkit-mask: url("../img/glyphicons_flickr.png") left top repeat;
+  -moz-mask: url("../img/glyphicons_flickr.png") left top repeat;
+  -o-mask: url("../img/glyphicons_flickr.png") left top repeat;
+  mask: url("../img/glyphicons_flickr.png") left top repeat;
+}
+.btn .icon-projects {
+  -webkit-mask: url("../img/icon-projects.png") center center no-repeat;
+  -moz-mask: url("../img/icon-projects.png") center center no-repeat;
+  -o-mask: url("../img/icon-projects.png") center center no-repeat;
+  mask: url("../img/icon-projects.png") center center no-repeat;
+}
+.btn .icon-photo {
+  -webkit-mask: url("../img/icon-photo.png") center center no-repeat;
+  -moz-mask: url("../img/icon-photo.png") center center no-repeat;
+  -o-mask: url("../img/icon-photo.png") center center no-repeat;
+  mask: url("../img/icon-photo.png") center center no-repeat;
+}
+.btn .icon-music {
+  -webkit-mask: url("../img/icon-music.png") center center no-repeat;
+  -moz-mask: url("../img/icon-music.png") center center no-repeat;
+  -o-mask: url("../img/icon-music.png") center center no-repeat;
+  mask: url("../img/icon-music.png") center center no-repeat;
+}
+.btn .icon-about {
+  -webkit-mask: url("../img/icon-about.png") center center no-repeat;
+  -moz-mask: url("../img/icon-about.png") center center no-repeat;
+  -o-mask: url("../img/icon-about.png") center center no-repeat;
+  mask: url("../img/icon-about.png") center center no-repeat;
+}
+
+.header {
+  background: url("../img/background-darkbrown.png");
+  padding: 50px 0 10px;
+}
+.header a {
+  -webkit-transition-property: color, background, -webkit-transform;
+  -moz-transition-property: color, background, -moz-transform;
+  -o-transition-property: color, background, -o-transform;
+  transition-property: color, background, transform;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  display: inline-block;
+  color: #2defd0;
+}
+.header a:hover, .header a.active {
+  -webkit-transform: translate(0, 2px);
+  -moz-transform: translate(0, 2px);
+  -ms-transform: translate(0, 2px);
+  -o-transform: translate(0, 2px);
+  transform: translate(0, 2px);
+  color: #fe735b;
+  text-decoration: none;
+}
+.header .header-logo {
+  width: 23.40426%;
+  float: left;
+  margin-right: 2.12766%;
+  display: inline;
+  font-family: "Trade Gothic W01 Light";
+  font-size: 2.2em;
+}
+.header .header-nav {
+  width: 74.46809%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -20px;
+  display: inline;
+  text-align: right;
+}
+.header .header-nav .icon {
+  padding: 0 1px;
+  margin: 0 0 0 1px;
+  height: 34px;
+  width: 34px;
+  background: #2defd0;
+}
+.header .header-nav a:hover .icon, .header .header-nav a.active .icon {
+  background: #fe735b;
+}
+.header .header-nav .icon-music {
+  width: 22px;
+}
+
+.page-title {
+  background: url("../img/background-page-title.png") repeat-x;
+}
+.page-title .heading1 {
+  text-align: center;
+  line-height: .8em;
+  padding: 32px 0 0;
+}
+
+.yield {
+  font-size: 1.03em;
+  padding: 0 0 46px;
+}
+.yield img {
+  -webkit-box-shadow: 0px 0px 20px #bbbbbb;
+  -moz-box-shadow: 0px 0px 20px #bbbbbb;
+  box-shadow: 0px 0px 20px #bbbbbb;
+}
+.yield .row:first-child {
+  margin-top: 30px;
+}
+.yield .row:last-child {
+  margin-bottom: 30px;
+}
+
+.projects .a-project-cover {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+.projects .a-project-cover .a-project-cover-normal {
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  position: relative;
+  z-index: 1;
+}
+.projects .a-project-cover .a-project-cover-blurred {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.projects .a-project-cover:hover .a-project-cover-normal {
+  opacity: 0;
+}
+
+.about .about-picture {
+  width: 36.17021%;
+  float: left;
+  margin-right: 2.12766%;
+  display: inline;
+}
+.about .about-content {
+  width: 61.70213%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -20px;
+  display: inline;
+}
+
+.footer {
+  position: relative;
+  height: 24px;
+  margin: -46px auto 0;
+  border-top: 1px solid #d2d3d4;
+  color: #55534f;
+}
+.footer a {
+  font-family: "Trade Gothic W01 Bold 2";
+}
+.footer .footer-inner {
+  padding: 10px 0;
+  height: 100%;
+  border-top: 1px solid #fff;
+}
+.footer .footer-infos {
+  width: 36.17021%;
+  float: left;
+  margin-right: 2.12766%;
+  display: inline;
+  line-height: 1.6em;
+}
+.footer .footer-social {
+  width: 61.70213%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -20px;
+  display: inline;
+  text-align: right;
+}
+.footer .footer-social .btn {
+  -webkit-transition-property: color, background, -webkit-transform;
+  -moz-transition-property: color, background, -moz-transform;
+  -o-transition-property: color, background, -o-transform;
+  transition-property: color, background, transform;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+.footer .footer-social .btn:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transform: translate(0, 2px);
+  -moz-transform: translate(0, 2px);
+  -ms-transform: translate(0, 2px);
+  -o-transform: translate(0, 2px);
+  transform: translate(0, 2px);
+}
+.footer .footer-social .icon {
+  height: 24px;
+  width: 24px;
+  background: #2b2824;
+}
+
+#mti_wfs_colophon {
+  display: none !important;
+}

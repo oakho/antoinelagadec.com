@@ -1,0 +1,10 @@
+<div class="group">
+  <%= f.label :file %><%= f.error_message_on :file %>
+  <%= f.file_field :file, :class => :file_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+
+<div class="group navform wat-cf">
+  <%= f.submit pat(:save), :class => :button %>
+  <%= f.submit pat(:cancel), :onclick => "window.location='#{url(:attachments, :index)}';return false", :class => :button %>
+</div>

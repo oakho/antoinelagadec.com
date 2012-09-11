@@ -1,0 +1,18 @@
+<div class="group">
+  <% if @image.image.present? %>
+    <img src="<%= @image.image.url %>" >
+  <% end %>
+  <%= f.label :image %><%= f.error_message_on :image %>
+  <%= f.file_field :image, :class => :file_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :name %><%= f.error_message_on :name %>
+  <%= f.text_field :name, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+
+<div class="group navform wat-cf">
+  <%= f.submit pat(:save), :class => :button %>
+  <%= f.submit pat(:cancel), :onclick => "window.location='#{url(:images, :index)}';return false", :class => :button %>
+</div>

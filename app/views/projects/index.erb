@@ -1,0 +1,16 @@
+<div class="projects row">
+<% unless @projects.nil? %>
+  <% @projects.each do |project| %>
+    <a class="a-project-cover" href="/projects/<%= project.slug %>">
+      <div class="a-project-cover-normal">
+        <img src="<%= project.cover_url %>" alt="">
+      </div>
+      <div class="a-project-cover-blurred">
+        <img src="<%= project.cover_blurred_url %>" alt="">
+      </div>
+    </a>
+  <% end %>
+<% else %>
+  No project available yet
+<% end %>
+</div>

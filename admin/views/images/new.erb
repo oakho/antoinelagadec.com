@@ -1,0 +1,17 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to pat(:list), url(:images, :index) %></li>
+      <li class="active"><%= link_to pat(:new), url(:images, :new) %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2 class="title"><%= pat(:new) %> <% mt(:image) %></h2>
+    <div class="inner">
+      <% form_for :image, url(:images, :create), multipart: true,  class: :form do |f| %>
+        <%= partial "images/form", :locals => { :f => f } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% content_for :sidebar, partial("base/sidebar") %>
