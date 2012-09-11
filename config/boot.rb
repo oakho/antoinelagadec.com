@@ -43,7 +43,7 @@ Padrino.before_load do
   if Padrino.env == :production
     dragonfly.configure do |c|
       Dragonfly::DataStorage::S3DataStore.new(
-        :bucket_name => 'antoinelagadec',
+        :bucket_name => ENV['S3_BUCKET'],
         :access_key_id => ENV['S3_KEY'],
         :secret_access_key => ENV['S3_SECRET']
       )
