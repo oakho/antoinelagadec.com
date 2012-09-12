@@ -2,6 +2,7 @@
 <% unless @projects.nil? %>
   <% @projects.each do |project| %>
     <a class="a-project-cover" href="/projects/<%= project.slug %>">
+      <h3 class="heading2"><%= project.name %></h3>
       <div class="a-project-cover-normal">
         <img src="<%= project.cover_url %>" alt="">
       </div>
