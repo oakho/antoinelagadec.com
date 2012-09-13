@@ -18,6 +18,8 @@ Portfolio.controllers :projects do
   #   "Hello world!"
   # end
 
+  set :controller, "Projects"
+
   get :index do
     @title = "Projects"
     @projects = Project.all
@@ -25,6 +27,8 @@ Portfolio.controllers :projects do
   end
 
   get :index, with: :slug do
+    @project = Project.find_by_slug(params[:slug])
+    @title = @project.name
     render 'projects/show'
   end
 end

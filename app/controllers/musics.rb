@@ -18,8 +18,6 @@ Portfolio.controllers :musics do
   #   "Hello world!"
   # end
 
-  set :current_controller, "Musics"
-
   get :index do
     @title = "Musics"
     render 'musics/index'
