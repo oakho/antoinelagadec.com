@@ -6,7 +6,15 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title></title>
+  <title>
+    <%= 
+      site_title({
+        base:       settings.site_title_base,
+        separator:  settings.site_title_separator,
+        page:       @title,
+      })
+    %>
+  </title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
 
@@ -26,14 +34,14 @@
     <header id="header" class="header" style="display: none;">
       <div class="header-inner">
         <div class="row">
-          <div class="header-logo">
+          <h1 class="header-logo">
             <a href="/"><strong>antoine</strong>lagadec</a>
-          </div>
+          </h1>
           <nav id="mainNav" class="header-nav">
             <a class="btn" href="/projects"><i class="icon icon-projects"></i></a>
             <a class="btn" href="/photos"><i class="icon icon-photo"></i></a>
             <a class="btn" href="/musics"><i class="icon icon-music"></i></a>
-            <a class="btn" href="/about"><i class="icon icon-about"></i></a>
+            <a style="display: none;" class="btn" href="/about"><i class="icon icon-about"></i></a>
           </nav>
         </div>
       </div>
@@ -42,7 +50,7 @@
     <div id="pageTitle" class="page-title" style="display: none;">
       <div class="page-title-inner">
         <div class="row">
-          <h1 class="heading1"><%= @title %></h1>
+          <h2 class="heading1"><%= @title %></h2>
         </div>
       </div>
     </div>
@@ -59,7 +67,7 @@
     <div class="footer-inner">
       <div class="row">
         <div class="footer-infos">
-          Powered by <a href="http://www.padrinorb.com/" target="_blank">Padrino</a> & Hosted by <a href="http://www.heroku.com" target="_blank">Heroku</a>
+          © 2012, <a href="mailto:hello@antoinelagadec.com">Antoine Lagadec</a> | Powered by <a href="http://www.padrinorb.com/" target="_blank">Padrino</a> & Hosted by <a href="http://www.heroku.com" target="_blank">Heroku</a>
         </div>
         <div class="footer-social">
           <a class="btn" target="_blank" href="http://github.com/oakho"><i class="icon icon-github"></i></a>

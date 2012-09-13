@@ -40,6 +40,9 @@ class Portfolio < Padrino::Application
   # layout  :my_layout            # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
   #
 
+  set :site_title_base, "Antoine Lagadec"
+  set :site_title_separator, " / "
+
   assets do
     serve '/js',     from: '../public/assets/js'
     serve '/css',    from: '../public/assets/css'
@@ -73,6 +76,11 @@ class Portfolio < Padrino::Application
   end
 
   configure :production do
+  end
+
+  get "/" do
+    @title = "Hello there"
+    render 'pages/about'
   end
 
   ##
