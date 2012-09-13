@@ -34,7 +34,7 @@ define(function() {
       // Navigation Events and Outgoing Animations
       $("a:not([target='_blank'])").on("click", function(e) {
         var self = this;
-        
+
         toggleOthers();
         toggleHeader(200, function() {
           window.location = $(self).attr('href');
@@ -45,9 +45,10 @@ define(function() {
 
       // Navigation Active States
       $header.find('a').each(function(i, e) {
-        var href = $(this).attr("href");
+        var section  = $(this).attr("href").split("/")[1],
+            pathname = window.location.pathname.split("/")[1];
 
-        if(window.location.pathname === href) {
+        if(pathname === section) {
           $(this).addClass("active");
         }
       });
