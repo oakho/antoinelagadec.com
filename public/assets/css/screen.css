@@ -70,10 +70,6 @@ p {
   line-height: 1.2em;
 }
 
-p:last-child {
-  margin-bottom: 0;
-}
-
 a {
   text-decoration: none;
   color: #3f3c39;
@@ -129,40 +125,52 @@ strong {
   vertical-align: middle;
 }
 .btn .icon-github {
-  -webkit-mask: url("../img/glyphicons_github.png") left top repeat;
-  -moz-mask: url("../img/glyphicons_github.png") left top repeat;
-  -o-mask: url("../img/glyphicons_github.png") left top repeat;
-  mask: url("../img/glyphicons_github.png") left top repeat;
+  -webkit-mask: url("../img/glyphicons_github.png") center center no-repeat;
+  -moz-mask: url("../img/glyphicons_github.png") center center no-repeat;
+  -o-mask: url("../img/glyphicons_github.png") center center no-repeat;
+  mask: url("../img/glyphicons_github.png") center center no-repeat;
 }
 .btn .icon-spotify {
-  -webkit-mask: url("../img/glyphicons_spootify.png") left top repeat;
-  -moz-mask: url("../img/glyphicons_spootify.png") left top repeat;
-  -o-mask: url("../img/glyphicons_spootify.png") left top repeat;
-  mask: url("../img/glyphicons_spootify.png") left top repeat;
+  -webkit-mask: url("../img/glyphicons_spootify.png") center center no-repeat;
+  -moz-mask: url("../img/glyphicons_spootify.png") center center no-repeat;
+  -o-mask: url("../img/glyphicons_spootify.png") center center no-repeat;
+  mask: url("../img/glyphicons_spootify.png") center center no-repeat;
 }
 .btn .icon-pinboard {
-  -webkit-mask: url("../img/glyphicons_pinboard.png") left top repeat;
-  -moz-mask: url("../img/glyphicons_pinboard.png") left top repeat;
-  -o-mask: url("../img/glyphicons_pinboard.png") left top repeat;
-  mask: url("../img/glyphicons_pinboard.png") left top repeat;
+  -webkit-mask: url("../img/glyphicons_pinboard.png") center center no-repeat;
+  -moz-mask: url("../img/glyphicons_pinboard.png") center center no-repeat;
+  -o-mask: url("../img/glyphicons_pinboard.png") center center no-repeat;
+  mask: url("../img/glyphicons_pinboard.png") center center no-repeat;
 }
 .btn .icon-facebook {
-  -webkit-mask: url("../img/glyphicons_facebook.png") left top repeat;
-  -moz-mask: url("../img/glyphicons_facebook.png") left top repeat;
-  -o-mask: url("../img/glyphicons_facebook.png") left top repeat;
-  mask: url("../img/glyphicons_facebook.png") left top repeat;
+  -webkit-mask: url("../img/glyphicons_facebook.png") center center no-repeat;
+  -moz-mask: url("../img/glyphicons_facebook.png") center center no-repeat;
+  -o-mask: url("../img/glyphicons_facebook.png") center center no-repeat;
+  mask: url("../img/glyphicons_facebook.png") center center no-repeat;
 }
 .btn .icon-twitter {
-  -webkit-mask: url("../img/glyphicons_twitter.png") left top repeat;
-  -moz-mask: url("../img/glyphicons_twitter.png") left top repeat;
-  -o-mask: url("../img/glyphicons_twitter.png") left top repeat;
-  mask: url("../img/glyphicons_twitter.png") left top repeat;
+  -webkit-mask: url("../img/glyphicons_twitter.png") center center no-repeat;
+  -moz-mask: url("../img/glyphicons_twitter.png") center center no-repeat;
+  -o-mask: url("../img/glyphicons_twitter.png") center center no-repeat;
+  mask: url("../img/glyphicons_twitter.png") center center no-repeat;
 }
 .btn .icon-flickr {
-  -webkit-mask: url("../img/glyphicons_flickr.png") left top repeat;
-  -moz-mask: url("../img/glyphicons_flickr.png") left top repeat;
-  -o-mask: url("../img/glyphicons_flickr.png") left top repeat;
-  mask: url("../img/glyphicons_flickr.png") left top repeat;
+  -webkit-mask: url("../img/glyphicons_flickr.png") center center no-repeat;
+  -moz-mask: url("../img/glyphicons_flickr.png") center center no-repeat;
+  -o-mask: url("../img/glyphicons_flickr.png") center center no-repeat;
+  mask: url("../img/glyphicons_flickr.png") center center no-repeat;
+}
+.btn .icon-linkedin {
+  -webkit-mask: url("../img/glyphicons_linked_in.png") center center no-repeat;
+  -moz-mask: url("../img/glyphicons_linked_in.png") center center no-repeat;
+  -o-mask: url("../img/glyphicons_linked_in.png") center center no-repeat;
+  mask: url("../img/glyphicons_linked_in.png") center center no-repeat;
+}
+.btn .icon-mail {
+  -webkit-mask: url("../img/glyphicons_envelope.png") center center no-repeat;
+  -moz-mask: url("../img/glyphicons_envelope.png") center center no-repeat;
+  -o-mask: url("../img/glyphicons_envelope.png") center center no-repeat;
+  mask: url("../img/glyphicons_envelope.png") center center no-repeat;
 }
 .btn .icon-projects {
   -webkit-mask: url("../img/icon-projects.png") center center no-repeat;
@@ -187,12 +195,6 @@ strong {
   -moz-mask: url("../img/icon-about.png") center center no-repeat;
   -o-mask: url("../img/icon-about.png") center center no-repeat;
   mask: url("../img/icon-about.png") center center no-repeat;
-}
-.btn .icon-mail {
-  -webkit-mask: url("../img/icon-mail.png") center center no-repeat;
-  -moz-mask: url("../img/icon-mail.png") center center no-repeat;
-  -o-mask: url("../img/icon-mail.png") center center no-repeat;
-  mask: url("../img/icon-mail.png") center center no-repeat;
 }
 
 .header {
@@ -353,6 +355,20 @@ strong {
   transform: scale(1, 1);
 }
 
+.project .project-attachments {
+  width: 68.08511%;
+  float: left;
+  margin-right: 2.12766%;
+  display: inline;
+}
+.project .project-infos {
+  width: 29.78723%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -20px;
+  display: inline;
+}
+
 .musics .a-music {
   margin-bottom: 20px;
 }
@@ -366,6 +382,9 @@ strong {
   margin-right: 2.12766%;
   display: inline;
 }
+.about .about-picture img {
+  width: 100%;
+}
 .about .about-content {
   width: 61.70213%;
   float: right;
@@ -377,19 +396,22 @@ strong {
   background: url("../img/background-lightgray.png");
   border-top: 1px solid #d2d3d5;
   border-bottom: 1px solid #d2d3d5;
-  margin-top: 23px;
 }
 .about .about-contact .about-contact-inner {
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  padding: 20px;
+  padding: 11px 14px;
 }
 .about .btn {
   line-height: 1em;
+  margin-bottom: 5px;
+}
+.about .btn:last-child {
+  margin-bottom: 0;
 }
 .about .btn .icon {
-  height: 20px;
-  width: 20px;
+  height: 24px;
+  width: 24px;
   margin-right: 10px;
 }
 .about .btn .icon-mail {
