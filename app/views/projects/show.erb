@@ -1,0 +1,21 @@
+<div class="project row">
+  <div class="project-attachments">
+    <% @project.attachments.each do |attachment| %>
+      <img src="<%= attachment.file.thumb('640x').url %>" alt="">
+    <% end %>
+  </div>
+  <div class="project-infos">
+    <h3 class="heading2">The Project</h3>
+    <div class="project-body">
+      <%= @project.body %>
+    </div>
+    <% unless @project.tags.empty? %>
+      <h3 class="heading2">The Technologies</h3>
+      <p class="project-tags">
+        <% @project.tags.each do |tag| %>
+          <span class="project-tag tag"><%= tag.name.capitalize %></span>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+</div>

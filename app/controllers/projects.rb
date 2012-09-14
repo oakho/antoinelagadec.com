@@ -22,7 +22,7 @@ Portfolio.controllers :projects do
 
   get :index do
     @title = "Projects"
-    @projects = Project.all
+    @projects = Project.find_by_category_name("Projects")
     render 'projects/index'
   end
 
