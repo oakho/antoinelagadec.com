@@ -41,7 +41,7 @@ class Portfolio < Padrino::Application
   #
 
   set :site_title_base, "Antoine Lagadec"
-  set :site_title_separator, " / "
+  set :site_title_separator, " | "
 
   assets do
     serve '/js',     from: '../public/assets/js'
@@ -79,7 +79,7 @@ class Portfolio < Padrino::Application
   end
 
   get "/" do
-    @title = "Hello there"
+    @title = "Hello I'm Antoine"
     render 'pages/about'
   end
 
