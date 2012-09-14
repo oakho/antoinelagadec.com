@@ -3,7 +3,15 @@
   <%= f.file_field :file, :class => :file_field %>
   <span class="description">Ex: a simple text</span>
 </div>
-
+<div class="group">
+  <label for="project">Project</label>
+  <select id="project" name="project" class="check_box">
+    <% @projects.each do |project| %>
+        <option value="<%= project.id %>"><%= project.name %></option>
+    <% end %>
+  </select>
+  <span class="description">Ex: a simple text</span>
+</div>
 <div class="group navform wat-cf">
   <%= f.submit pat(:save), :class => :button %>
   <%= f.submit pat(:cancel), :onclick => "window.location='#{url(:attachments, :index)}';return false", :class => :button %>

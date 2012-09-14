@@ -7,14 +7,17 @@ Admin.controllers :attachments do
 
   get :new do
     @attachment = Attachment.new
+    @projects = Project.all
     render 'attachments/new'
   end
 
   post :create do
+    @project              = Project.find(params[:project])
     @attachment           = Attachment.new({ file: params[:attachment][:file][:tempfile] })
     @attachment.file.name = params[:attachment][:file][:filename]
+    @project.attachments  = [ @attachment ]
 
-    if @attachment.save
+    if @project.save
       flash[:notice] = 'Attachment was successfully created.'
       redirect url(:attachments, :edit, :id => @attachment.id)
     else
@@ -24,15 +27,18 @@ Admin.controllers :attachments do
 
   get :edit, :with => :id do
     @attachment = Attachment.find(params[:id])
+    @projects = Project.all
     render 'attachments/edit'
   end
 
   put :update, :with => :id do
-    @attachment           = Attachment.find(params[:id])
-    @attachment.file      = params[:attachment][:file][:tempfile]
+    # To rework to make it work as expected
+    @project              = Project.find(params[:project])
+    @attachment           = Attachment.new({ file: params[:attachment][:file][:tempfile] })
     @attachment.file.name = params[:attachment][:file][:filename]
+    @project.attachments  = [ @attachment ]
 
-    if @attachment.update_attributes({})
+    if @project.update_attributes({})
       flash[:notice] = 'Attachment was successfully updated.'
       redirect url(:attachments, :edit, :id => @attachment.id)
     else
