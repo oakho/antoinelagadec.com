@@ -70,6 +70,10 @@ p {
   line-height: 1.2em;
 }
 
+p:last-child {
+  margin-bottom: 0;
+}
+
 a {
   text-decoration: none;
   color: #3f3c39;
@@ -122,6 +126,7 @@ strong {
 .btn .icon {
   display: inline-block;
   background: #000;
+  vertical-align: middle;
 }
 .btn .icon-github {
   -webkit-mask: url("../img/glyphicons_github.png") left top repeat;
@@ -182,6 +187,12 @@ strong {
   -moz-mask: url("../img/icon-about.png") center center no-repeat;
   -o-mask: url("../img/icon-about.png") center center no-repeat;
   mask: url("../img/icon-about.png") center center no-repeat;
+}
+.btn .icon-mail {
+  -webkit-mask: url("../img/icon-mail.png") center center no-repeat;
+  -moz-mask: url("../img/icon-mail.png") center center no-repeat;
+  -o-mask: url("../img/icon-mail.png") center center no-repeat;
+  mask: url("../img/icon-mail.png") center center no-repeat;
 }
 
 .header {
@@ -362,6 +373,28 @@ strong {
   #margin-left: -20px;
   display: inline;
 }
+.about .about-contact {
+  background: url("../img/background-lightgray.png");
+  border-top: 1px solid #d2d3d5;
+  border-bottom: 1px solid #d2d3d5;
+  margin-top: 23px;
+}
+.about .about-contact .about-contact-inner {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  padding: 20px;
+}
+.about .btn {
+  line-height: 1em;
+}
+.about .btn .icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+.about .btn .icon-mail {
+  margin-top: -4px;
+}
 
 .footer {
   position: relative;
@@ -383,7 +416,7 @@ strong {
   float: left;
   margin-right: 2.12766%;
   display: inline;
-  line-height: 1.6em;
+  line-height: 1.8em;
 }
 .footer .footer-social {
   width: 48.93617%;

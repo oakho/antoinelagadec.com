@@ -33,6 +33,7 @@ p {
   margin-bottom: 1.4em;
   line-height: 1.2em;
 }
+p:last-child { margin-bottom: 0; }
 
 a {
   text-decoration: none;
@@ -69,7 +70,11 @@ strong { font-family: "Trade Gothic W01 Bold 2"; }
 .btn {
   display: inline-block;
 
-  .icon { display: inline-block; background: #000; }
+  .icon {
+    display: inline-block;
+    background: #000;
+    vertical-align: middle;
+  }
 
   .icon-github   { @include mask('../img/glyphicons_github.png'); }
   .icon-spotify  { @include mask('../img/glyphicons_spootify.png'); }
@@ -81,6 +86,7 @@ strong { font-family: "Trade Gothic W01 Bold 2"; }
   .icon-photo    { @include mask('../img/icon-photo.png', center center, no-repeat); }
   .icon-music    { @include mask('../img/icon-music.png', center center, no-repeat); }
   .icon-about    { @include mask('../img/icon-about.png', center center, no-repeat); }
+  .icon-mail     { @include mask('../img/icon-mail.png', center center, no-repeat); }
 }
 
 // Header
@@ -219,6 +225,32 @@ strong { font-family: "Trade Gothic W01 Bold 2"; }
 .about {
   .about-picture { @include span-columns(6, 16); }
   .about-content { @include span-columns(10 omega, 16); }
+
+  .about-contact {
+    background: url('../img/background-lightgray.png');
+    border-top: 1px solid #d2d3d5;
+    border-bottom: 1px solid #d2d3d5;
+    margin-top: 23px;
+
+    .about-contact-inner {
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      padding: 20px;
+    }
+
+    .about-contact-links {  }
+  }
+
+  .btn {
+    line-height: 1em;
+
+    .icon {
+      height: 20px;
+      width: 20px;
+      margin-right: 10px;
+    }
+    .icon-mail { margin-top: -4px; }
+  }
 }
 
 // Footer
@@ -240,7 +272,7 @@ strong { font-family: "Trade Gothic W01 Bold 2"; }
 
   .footer-infos {
     @include span-columns(8, 16);
-    line-height: 1.6em;
+    line-height: 1.8em;
   }
 
   .footer-social {
