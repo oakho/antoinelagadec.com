@@ -7,7 +7,7 @@ Portfolio.helpers do
     page        = options[:page]       ||= nil
     title       = base.to_s
 
-    title = "#{title} #{separator} #{page}" unless page.nil?
+    title = "#{page} #{separator} #{title} " unless page.nil?
 
     title
   end
