@@ -15,7 +15,7 @@ Admin.controllers :attachments do
     @project              = Project.find(params[:project])
     @attachment           = Attachment.new({ file: params[:attachment][:file][:tempfile] })
     @attachment.file.name = params[:attachment][:file][:filename]
-    @project.attachments  = [ @attachment ]
+    @project.attachments.push @attachment
 
     if @project.save
       flash[:notice] = 'Attachment was successfully created.'

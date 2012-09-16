@@ -1,5 +1,5 @@
 class Attachment < ActiveRecord::Base
   attachment_accessor :file
 
-  has_one :project
+  belongs_to :project
 end
