@@ -79,7 +79,7 @@ class Portfolio < Padrino::Application
   end
 
   get "/" do
-    @title = "Hello I'm Antoine"
+    @title = "Hello, It's Antoine, sup' ?"
     render 'pages/about'
   end
 
