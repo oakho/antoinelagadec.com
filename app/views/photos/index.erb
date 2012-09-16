@@ -1,6 +1,6 @@
 <div class="photos row">
 <% unless @photos.nil? %>
-  <% @projects.each do |photo| %>
+  <% @photos.each do |photo| %>
     <a class="a-photo-cover" href="/photos/<%= photo.slug %>">
       <h3 class="heading2"><%= photo.name %></h3>
       <div class="a-photo-cover-normal">

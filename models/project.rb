@@ -23,7 +23,7 @@ class Project < ActiveRecord::Base
   end
 
   def self.find_by_category_name(category)
-    category = Category.find_by_name category
+    category = Category.find_by_name(category)
     unless category.nil?
       return category.projects
     end

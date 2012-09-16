@@ -20,13 +20,13 @@ Portfolio.controllers :photos do
 
   get :index do
     @title = "Here's some photos I took"
-    @projects = Project.find_by_category_name("Photos")
+    @photos = Project.find_by_category_name("Photos")
     render 'photos/index'
   end
 
   get :index, with: :slug do
-    @project = Project.find_by_slug(params[:slug])
-    @title = @project.name
-    render 'projects/show'
+    @photo = Project.find_by_slug(params[:slug])
+    @title = @photo.name
+    render 'photos/show'
   end
 end
