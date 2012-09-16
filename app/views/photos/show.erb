@@ -1,0 +1,23 @@
+<div class="project row" itemscope itemtype="http://schema.org/Thing">
+  <aside class="project-attachments">
+    <% @project.attachments.each do |attachment| %>
+      <div itemscope itemtype="http://schema.org/ImageObject">
+        <img src="<%= attachment.file.thumb('640x').url %>" itemprop="contentURL" alt="<%= attachment.file.name %>">
+      </div>
+    <% end %>
+  </aside>
+  <article class="project-infos">
+    <h3 class="heading2">The Project</h3>
+    <section class="project-body" itemprop="description">
+      <%= @project.body %>
+    </section>
+    <% unless @project.tags.empty? %>
+      <h3 class="heading2">The Technologies</h3>
+      <section class="project-tags">
+        <% @project.tags.each do |tag| %>
+          <span class="project-tag tag"><%= tag.name.capitalize %></span>
+        <% end %>
+      </section>
+    <% end %>
+  </article>
+</div>

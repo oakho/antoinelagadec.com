@@ -160,6 +160,15 @@ strong { font-family: "Trade Gothic W01 Bold 2"; }
   }
 }
 
+// Page Title
+// ----------------------------------------------------------------------
+.musics {
+  .a-music {
+    margin-bottom: 20px;
+  }
+  .a-music:last-child { margin-bottom: 0; }
+}
+
 // Projects
 // ----------------------------------------------------------------------
 .projects {
@@ -218,13 +227,62 @@ strong { font-family: "Trade Gothic W01 Bold 2"; }
   .project-infos { @include span-columns(5 omega, 16); }
 }
 
-// Page Title
+// Photos
 // ----------------------------------------------------------------------
-.musics {
-  .a-music {
-    margin-bottom: 20px;
+.photos {
+  .a-photo-cover {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    height: 253px;
+    overflow: hidden;
+
+    img {
+      @include single-transition(all, 300ms, ease-in);
+    }
+
+    .heading2 {
+      @include single-transition(all, 300ms, ease-out);
+      @include single-box-shadow(#555, 0px, 0px, 20px);
+      @include scale(.8);
+      position: absolute;
+      z-index: 5;
+      margin: 0 auto;
+      display: inline-block;
+      background: rgba(255, 255, 255, .7);
+      padding: 10px 15px;
+      bottom: -40px;
+      opacity: 0;
+    }
+
+    .a-photo-cover-normal {
+      @include single-transition(all, 300ms, ease-in);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .a-photo-cover-blurred {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &:hover {
+      img { @include single-box-shadow(#bbb, 0px, 0px, 0); @include scale(1.1) }
+      .a-photo-cover-normal { opacity: 0; }
+      .heading2 { bottom: 30px; opacity: 1; @include scale(1); }
+    }
   }
-  .a-music:last-child { margin-bottom: 0; }
+}
+
+// Single photo
+// ----------------------------------------------------------------------
+.photo {
+  .photo-attachments { @include span-columns(11, 16); }
+  .photo-infos { @include span-columns(5 omega, 16); }
 }
 
 // About
@@ -256,6 +314,7 @@ strong { font-family: "Trade Gothic W01 Bold 2"; }
   .btn {
     line-height: 1em;
     margin-bottom: 5px;
+    
     &:last-child { margin-bottom: 0; }
 
     .icon {
