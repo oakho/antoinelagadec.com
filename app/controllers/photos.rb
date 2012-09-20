@@ -20,7 +20,7 @@ Portfolio.controllers :photos do
 
   get :index do
     @title = "Here's some photos I took"
-    @photos = Project.find_by_category_name("Photos")
+    @photos = Project.find_by_category("Photos")
     render 'photos/index'
   end
 

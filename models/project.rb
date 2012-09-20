@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+  scope :blabla, order('"projects"."order" DESC')
+
   belongs_to              :account
   has_many                :attachments
   has_and_belongs_to_many :categories
@@ -22,8 +24,8 @@ class Project < ActiveRecord::Base
     self.cover.convert('-blur 0x6').url
   end
 
-  def self.find_by_category_name(category)
-    category = Category.find_by_name(category)
+  def self.find_by_category(category)
+    category = Category.includes(:projects).order('"projects"."order" ASC').find_by_name(category)
     unless category.nil?
       return category.projects
     end

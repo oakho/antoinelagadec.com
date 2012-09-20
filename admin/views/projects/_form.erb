@@ -19,6 +19,11 @@
   <span class="description">Ex: a simple text</span>
 </div>
 <div class="group">
+  <%= f.label :order %><%= f.error_message_on :order %>
+  <%= f.text_field :order, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
   <label for="cover">Cover:</label>
   <input class="file_field" type="file" name="cover">
   <span class="description">Ex: a simple text</span>

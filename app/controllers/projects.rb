@@ -21,8 +21,8 @@ Portfolio.controllers :projects do
   set :controller, "Projects"
 
   get :index do
-    @title = "Here's a some projects I made"
-    @projects = Project.find_by_category_name("Projects")
+    @title = "Here's some projects I made"
+    @projects = Project.find_by_category("Projects")
     render 'projects/index'
   end
 

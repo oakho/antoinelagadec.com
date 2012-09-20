@@ -14,7 +14,7 @@ Admin.controllers :attachments do
   post :create do
     attachment           = Attachment.new({ file: params[:attachment][:file][:tempfile] })
     attachment.file.name = params[:attachment][:file][:filename]
-    
+
     @project              = Project.find(params[:project])
     @project.attachments << @attachment
 
@@ -34,10 +34,11 @@ Admin.controllers :attachments do
 
   put :update, :with => :id do
     # To rework to make it work as expected
+    attachment           = Attachment.new({ file: params[:attachment][:file][:tempfile] })
+    attachment.file.name = params[:attachment][:file][:filename]
+
     @project              = Project.find(params[:project])
-    @attachment           = Attachment.new({ file: params[:attachment][:file][:tempfile] })
-    @attachment.file.name = params[:attachment][:file][:filename]
-    @project.attachments  = [ @attachment ]
+    @project.attachments << @attachment
 
     if @project.update_attributes({})
       flash[:notice] = 'Attachment was successfully updated.'
