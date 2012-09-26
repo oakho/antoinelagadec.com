@@ -45,8 +45,8 @@ define(function() {
 
       // Navigation Active States
       $header.find('a').each(function(i, e) {
-        var section  = $(this).attr("href").split("/")[1],
-            pathname = window.location.pathname.split("/")[1];
+        var section  = $(this).attr("href").split("/")[2],
+            pathname = window.location.pathname.split("/")[2];
 
         if(pathname === section) {
           $(this).addClass("active");

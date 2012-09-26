@@ -18,14 +18,6 @@ Portfolio.controllers :projects do
   #   "Hello world!"
   # end
 
-  set :controller, "Projects"
-
-  get :index do
-    @title = "Here's some projects I worked on"
-    @projects = Project.find_by_category("Projects")
-    render 'projects/index'
-  end
-
   get :index, with: :slug do
     @project = Project.find_by_slug(params[:slug])
     @title = @project.name

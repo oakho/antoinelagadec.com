@@ -1,0 +1,17 @@
+<div class="photos row">
+<% unless @projects.nil? %>
+  <% @projects.each do |project| %>
+    <a class="a-photo-cover" href="/projects/<%= project.slug %>">
+      <h3 class="heading2"><%= project.name %></h3>
+      <div class="a-photo-cover-normal">
+        <img src="<%= project.cover_url %>" alt="">
+      </div>
+      <div class="a-photo-cover-blurred">
+        <img src="<%= project.cover_blurred_url %>" alt="">
+      </div>
+    </a>
+  <% end %>
+<% else %>
+  No photos available yet
+<% end %>
+</div>

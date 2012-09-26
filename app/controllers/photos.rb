@@ -1,4 +1,4 @@
-Portfolio.controllers :photos do
+Portfolio.controllers :categories do
   # get :index, :map => "/foo/bar" do
   #   session[:foo] = "bar"
   #   render 'index'
@@ -17,16 +17,4 @@ Portfolio.controllers :photos do
   # get "/example" do
   #   "Hello world!"
   # end
-
-  get :index do
-    @title = "Here's some photos I took"
-    @photos = Project.find_by_category("Photos")
-    render 'photos/index'
-  end
-
-  get :index, with: :slug do
-    @photo = Project.find_by_slug(params[:slug])
-    @title = @photo.name
-    render 'photos/show'
-  end
 end

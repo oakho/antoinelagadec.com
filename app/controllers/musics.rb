@@ -19,7 +19,6 @@ Portfolio.controllers :musics do
   # end
 
   get :index do
-    @title = "Here's some musics I composed"
-    render 'musics/index'
+    
   end
 end
