@@ -8,3 +8,4 @@ vendor/gems/*
 !vendor/gems/cache/
 public/assets/.sass-cache/*
 public/media/*
+.rbenv-gemsets
