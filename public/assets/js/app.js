@@ -1,6 +1,6 @@
 define(function() {
-	return {
-		init: function() {
+  return {
+    init: function() {
       var $header, $others;
 
       // UI Elements
@@ -53,5 +53,5 @@ define(function() {
         }
       });
     }
-	}
+  }
 });

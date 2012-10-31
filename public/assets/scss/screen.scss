@@ -18,6 +18,11 @@ $column-width  : 40px;            // each column is 4em wide
 $gutter-width  : 20px;            // 1em gutters between columns
 $grid-padding  : 10px;            // grid-padding equal to gutters
 
+// Font-Face
+// ----------------------------------------------------------------------
+@include font-face("Entypo Social", font-files("entypo-social.ttf", "entypo-social.svg", "entypo-social.woff"));
+@include font-face("Entypo", font-files("entypo.ttf", "entypo.svg", "entypo.woff"));
+
 // Defaults
 // ----------------------------------------------------------------------
 html, body { height: 100%; }
@@ -69,20 +74,22 @@ strong { font-family: "Trade Gothic W01 Bold 2"; }
 .btn {
   display: inline-block;
 
-  .icon {
-    display: inline-block;
-    background: #000;
-    vertical-align: middle;
+  &:hover {
+    text-decoration: none;
   }
 
-  .icon-github   { @include mask('../img/glyphicons_github.png', center center, no-repeat); }
-  .icon-spotify  { @include mask('../img/glyphicons_spootify.png', center center, no-repeat); }
-  .icon-pinboard { @include mask('../img/glyphicons_pinboard.png', center center, no-repeat); }
-  .icon-facebook { @include mask('../img/glyphicons_facebook.png', center center, no-repeat); }
-  .icon-twitter  { @include mask('../img/glyphicons_twitter.png', center center, no-repeat); }
-  .icon-flickr   { @include mask('../img/glyphicons_flickr.png', center center, no-repeat); }
-  .icon-linkedin { @include mask('../img/glyphicons_linked_in.png', center center, no-repeat); }
-  .icon-mail     { @include mask('../img/glyphicons_envelope.png', center center, no-repeat); }
+  .icon {
+    display: inline-block;
+    color: #000;
+    vertical-align: middle;
+    font-family: "Entypo";
+    font-size: 2.8em;
+    line-height: .4em;
+    margin-bottom: -4px;
+  }
+  
+  .icon-linkedin { font-family: "Entypo Social"; }
+  .icon-mail     {  }
   .icon-projects { @include mask('../img/icon-projects.png', center center, no-repeat); }
   .icon-photo    { @include mask('../img/icon-photo.png', center center, no-repeat); }
   .icon-music    { @include mask('../img/icon-music.png', center center, no-repeat); }
@@ -322,7 +329,6 @@ strong { font-family: "Trade Gothic W01 Bold 2"; }
       width: 24px;
       margin-right: 10px;
     }
-    .icon-mail { margin-top: -4px; }
   }
 }
 
@@ -357,7 +363,7 @@ strong { font-family: "Trade Gothic W01 Bold 2"; }
       @include transition-duration(200ms);
       @include transition-timing-function(ease-out);
       @include opacity(.8);
-
+      
       &:hover {
         @include opacity(1);
         @include translate(0, 2px);
@@ -365,9 +371,7 @@ strong { font-family: "Trade Gothic W01 Bold 2"; }
     }
 
     .icon {
-      height: 24px;
-      width: 24px;
-      background: #2b2824;
+      font-family: "Entypo Social"
     }
   }
 }

@@ -54,6 +54,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+@font-face {
+  font-family: "Entypo Social";
+  src: url('../fonts/entypo-social.ttf') format('truetype'), url('../fonts/entypo-social.svg') format('svg'), url('../fonts/entypo-social.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Entypo";
+  src: url('../fonts/entypo.ttf') format('truetype'), url('../fonts/entypo.svg') format('svg'), url('../fonts/entypo.woff') format('woff');
+}
+
 html, body {
   height: 100%;
 }
@@ -119,58 +129,20 @@ strong {
 .btn {
   display: inline-block;
 }
+.btn:hover {
+  text-decoration: none;
+}
 .btn .icon {
   display: inline-block;
-  background: #000;
+  color: #000;
   vertical-align: middle;
-}
-.btn .icon-github {
-  -webkit-mask: url("../img/glyphicons_github.png") center center no-repeat;
-  -moz-mask: url("../img/glyphicons_github.png") center center no-repeat;
-  -o-mask: url("../img/glyphicons_github.png") center center no-repeat;
-  mask: url("../img/glyphicons_github.png") center center no-repeat;
-}
-.btn .icon-spotify {
-  -webkit-mask: url("../img/glyphicons_spootify.png") center center no-repeat;
-  -moz-mask: url("../img/glyphicons_spootify.png") center center no-repeat;
-  -o-mask: url("../img/glyphicons_spootify.png") center center no-repeat;
-  mask: url("../img/glyphicons_spootify.png") center center no-repeat;
-}
-.btn .icon-pinboard {
-  -webkit-mask: url("../img/glyphicons_pinboard.png") center center no-repeat;
-  -moz-mask: url("../img/glyphicons_pinboard.png") center center no-repeat;
-  -o-mask: url("../img/glyphicons_pinboard.png") center center no-repeat;
-  mask: url("../img/glyphicons_pinboard.png") center center no-repeat;
-}
-.btn .icon-facebook {
-  -webkit-mask: url("../img/glyphicons_facebook.png") center center no-repeat;
-  -moz-mask: url("../img/glyphicons_facebook.png") center center no-repeat;
-  -o-mask: url("../img/glyphicons_facebook.png") center center no-repeat;
-  mask: url("../img/glyphicons_facebook.png") center center no-repeat;
-}
-.btn .icon-twitter {
-  -webkit-mask: url("../img/glyphicons_twitter.png") center center no-repeat;
-  -moz-mask: url("../img/glyphicons_twitter.png") center center no-repeat;
-  -o-mask: url("../img/glyphicons_twitter.png") center center no-repeat;
-  mask: url("../img/glyphicons_twitter.png") center center no-repeat;
-}
-.btn .icon-flickr {
-  -webkit-mask: url("../img/glyphicons_flickr.png") center center no-repeat;
-  -moz-mask: url("../img/glyphicons_flickr.png") center center no-repeat;
-  -o-mask: url("../img/glyphicons_flickr.png") center center no-repeat;
-  mask: url("../img/glyphicons_flickr.png") center center no-repeat;
+  font-family: "Entypo";
+  font-size: 2.8em;
+  line-height: .4em;
+  margin-bottom: -4px;
 }
 .btn .icon-linkedin {
-  -webkit-mask: url("../img/glyphicons_linked_in.png") center center no-repeat;
-  -moz-mask: url("../img/glyphicons_linked_in.png") center center no-repeat;
-  -o-mask: url("../img/glyphicons_linked_in.png") center center no-repeat;
-  mask: url("../img/glyphicons_linked_in.png") center center no-repeat;
-}
-.btn .icon-mail {
-  -webkit-mask: url("../img/glyphicons_envelope.png") center center no-repeat;
-  -moz-mask: url("../img/glyphicons_envelope.png") center center no-repeat;
-  -o-mask: url("../img/glyphicons_envelope.png") center center no-repeat;
-  mask: url("../img/glyphicons_envelope.png") center center no-repeat;
+  font-family: "Entypo Social";
 }
 .btn .icon-projects {
   -webkit-mask: url("../img/icon-projects.png") center center no-repeat;
@@ -502,9 +474,6 @@ strong {
   width: 24px;
   margin-right: 10px;
 }
-.about .btn .icon-mail {
-  margin-top: -4px;
-}
 
 .footer {
   position: relative;
@@ -562,9 +531,7 @@ strong {
   transform: translate(0, 2px);
 }
 .footer .footer-social .icon {
-  height: 24px;
-  width: 24px;
-  background: #2b2824;
+  font-family: "Entypo Social";
 }
 
 #mti_wfs_colophon {

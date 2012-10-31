@@ -7,22 +7,17 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>
-    <%= 
-      site_title({
-        base:       settings.site_title_base,
-        separator:  settings.site_title_separator,
-        page:       @title,
-      })
-    %>
+  <%= yield_content :title %>
   </title>
   <meta name="description" content="Hello, I'm Antoine a 23 years old Front-end Developer and Designer living near Paris">
   <meta name="keywords" content="front-end, developer, designer, web, html5, css3, mobile, ios, objective-c, ruby, php, javascript, jquery, photoshop, illustrator">
   <meta name="viewport" content="width=device-width">
-
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <%= css :screen, media: 'screen' %>
   <%= js :require, 'data-main' => '/js/main' %>
-  <script type="text/javascript" src="http://fast.fonts.com/jsapi/9e363f83-5a2a-450f-b164-c98b127664c4.js"></script>
+  <script type="text/javascript" src="http://fast.fonts.com/jsapi/9e363f83-5a2a-450f-b164-c98b127664c4.js">
+    
+  </script>
 </head>
 <body>
   <!--[if lt IE 7]>
@@ -49,7 +44,7 @@
     <div id="pageTitle" class="page-title" style="display: none;">
       <div class="page-title-inner">
         <div class="row">
-          <h2 class="heading1"><%= @title %></h2>
+          <h2 class="heading1"><%= yield_content :page %></h2>
         </div>
       </div>
     </div>
@@ -66,15 +61,15 @@
     <div class="footer-inner">
       <div class="row">
         <div class="footer-infos">
-          © 2012, <a href="mailto:hello@antoinelagadec.com">Antoine Lagadec</a> | Powered by <a href="http://www.padrinorb.com/" target="_blank">Padrino</a> & Hosted by <a href="http://www.heroku.com" target="_blank">Heroku</a>
+          © 2012, <a href="mailto:hello@antoinelagadec.com">Antoine Lagadec</a> | Hosted by <a href="http://www.heroku.com" target="_blank">Heroku</a>
         </div>
         <div class="footer-social">
-          <a class="btn" target="_blank" href="http://github.com/oakho"><i class="icon icon-github"></i></a>
-          <a class="btn" target="_blank" href="http://flickr.com/photos/oakho"><i class="icon icon-flickr"></i></a>
-          <a class="btn" target="_blank" href="http://pinboard.in/u:oakho"><i class="icon icon-pinboard"></i></a>
-          <a class="btn" target="_blank" href="http://open.spotify.com/user/1129698233"><i class="icon icon-spotify"></i></a>
-          <a class="btn" target="_blank" href="http://facebook.com/antoine.lagadec"><i class="icon icon-facebook"></i></a>
-          <a class="btn" target="_blank" href="http://twitter.com/oakho"><i class="icon icon-twitter"></i></a>
+          <a class="btn" target="_blank" href="http://github.com/oakho"><i class="icon">&#62208;</i></a>
+          <a class="btn" target="_blank" href="http://open.spotify.com/user/1129698233"><i class="icon">&#62248;</i></a>
+          <a class="btn" target="_blank" href="http://twitter.com/oakho"><i class="icon">&#62217;</i></a>
+          <a class="btn" target="_blank" href="http://facebook.com/antoine.lagadec"><i class="icon">&#62220;</i></a>
+          <a class="btn" target="_blank" href="http://fr.linkedin.com/in/alagadec"><i class="icon">&#62232;</i></a>
+          <!-- <a class="btn" target="_blank" href="http://flickr.com/photos/oakho">&#62211;</a> -->
         </div>
       </div>
     </div>
