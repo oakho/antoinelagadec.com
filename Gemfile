@@ -35,6 +35,7 @@ gem 'padrino', '0.10.7'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'thin'
 end
 
 group :production do
