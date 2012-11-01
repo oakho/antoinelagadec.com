@@ -25,6 +25,8 @@ gem 'rack-test', :require => "rack/test", :group => "test"
 # Padrino Stable Gem
 gem 'padrino', '0.10.7'
 
+gem 'thin'
+
 # Or Padrino Edge
 # gem 'padrino', :git => 'git://github.com/padrino/padrino-framework.git'
 
@@ -35,7 +37,6 @@ gem 'padrino', '0.10.7'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'thin'
 end
 
 group :production do
