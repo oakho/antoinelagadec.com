@@ -41,12 +41,15 @@ class Portfolio < Padrino::Application
   #
 
   set :site_title_base, "Antoine Lagadec"
-  set :site_title_separator, " | "
+  set :site_title_separator, "|"
 
   assets do
     serve '/js',     from: '../public/assets/js'
     serve '/css',    from: '../public/assets/css'
     serve '/img',    from: '../public/assets/img'
+
+    # TODO: Patch AssetPack to let fonts be served
+    serve '/fonts',  from: '../public/assets/fonts'
 
     css :screen, ['/css/screen.css']
     css :print, ['/css/print.css']
@@ -79,7 +82,6 @@ class Portfolio < Padrino::Application
   end
 
   get "/" do
-    @title = "Hello, I'm Antoine, sup' ?"
     render 'pages/about'
   end
 

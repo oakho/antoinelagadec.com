@@ -1,3 +1,5 @@
+<% title(page: @project.name, categories: @project.categories.join(", ")) %>
+
 <div class="project row" itemscope itemtype="http://schema.org/Thing">
   <aside class="project-attachments">
     <% @project.attachments.each do |attachment| %>
