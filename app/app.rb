@@ -43,6 +43,11 @@ class Portfolio < Padrino::Application
   set :site_title_base, "Antoine Lagadec"
   set :site_title_separator, "|"
 
+  set :soundcloud, Soundcloud.new(client_id:     ENV['SC_ID'],
+                                  client_secret: ENV['SC_SECRET'],
+                                  username:      ENV['SC_USERNAME'],
+                                  password:      ENV['SC_PASSWORD'])
+
   assets do
     serve '/js',     from: '../public/assets/js'
     serve '/css',    from: '../public/assets/css'

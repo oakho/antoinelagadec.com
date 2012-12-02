@@ -1,32 +1,13 @@
 <% title(page: "Here's some musics I composed") %>
-
 <div class="musics row">
+  <% soundcloud_tracks.each do |track| %>
   <div class="a-music" itemscope itemtype="http://schema.org/AudioObject">
     <h3 class="heading2" itemprop="name">
-      <a href="http://soundcloud.com/antoinelagadec/never-set-in-stone" target="_blank" title="Never Set in Stone">Never Set in Stone</a>
+      <a href="<%= track.permalink_url %>" target="_blank" title="<%= track.title %>"><%= track.title %></a>
     </h3>
-    <meta itemprop="contentURL" content="http://soundcloud.com/antoinelagadec/never-set-in-stone" />
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F40886193&amp;auto_play=false&amp;show_artwork=false&amp;color=fe735b"></iframe>
+    <meta itemprop="contentURL" content="<%= track.permalink_url %>" />
+    <!-- Plain HTML instead oEmbed return until SoundCloud API provide a way to disable artwork -->
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=<%= track.uri %>&amp;auto_play=false&amp;show_artwork=false&amp;color=fe735b"></iframe>
   </div>
-  <div class="a-music" itemscope itemtype="http://schema.org/AudioObject">
-    <h3 class="heading2" itemprop="name">
-      <a href="http://soundcloud.com/antoinelagadec/daddys-birthday" target="_blank" title="Daddy's Birthday">Daddy's Birthday</a>
-    </h3>
-    <meta itemprop="contentURL" content="http://soundcloud.com/antoinelagadec/daddys-birthday" />
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F12572678&amp;auto_play=false&amp;show_artwork=false&amp;color=fe735b"></iframe>
-  </div>
-  <div class="a-music" itemscope itemtype="http://schema.org/AudioObject">
-    <h3 class="heading2" itemprop="name">
-      <a href="http://soundcloud.com/antoinelagadec/childhood-sunset-instrumental" target="_blank" title="Childhood Sunset (Instrumental)">Childhood Sunset (Instrumental)</a>
-    </h3>
-    <meta itemprop="contentURL" content="http://soundcloud.com/antoinelagadec/childhood-sunset-instrumental" />
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F11924954&amp;auto_play=false&amp;show_artwork=false&amp;color=fe735b"></iframe>
-  </div>
-  <div class="a-music" itemscope itemtype="http://schema.org/AudioObject">
-    <h3 class="heading2" itemprop="name">
-      <a href="http://soundcloud.com/antoinelagadec/soul-stalking" target="_blank" title="Soul Stalking">Soul Stalking</a>
-    </h3>
-    <meta itemprop="contentURL" content="http://soundcloud.com/antoinelagadec/soul-stalking" />
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F9649644&amp;auto_play=false&amp;show_artwork=false&amp;color=fe735b"></iframe>
-  </div>
+  <% end %>
 </div>
