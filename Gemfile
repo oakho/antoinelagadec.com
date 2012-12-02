@@ -17,6 +17,7 @@ gem 'sinatra-mustache'
 gem 'dragonfly'
 gem 'fog'
 gem 'sinatra-assetpack'
+gem 'soundcloud'
 
 # Test requirements
 gem 'shoulda', :group => "test"
